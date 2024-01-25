@@ -24,4 +24,12 @@ export class UserRepository {
     const docs = await this._userModel.find().exec();
     return docs.map((doc) => UserMapper.toDomain(doc));
   }
+
+  async getByEmail(email: string) {
+    const doc = await this._userModel.findOne({ email }).exec();
+    if (doc) {
+      return UserMapper.toDomain(doc);
+    }
+    return undefined;
+  }
 }
