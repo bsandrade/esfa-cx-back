@@ -1,6 +1,6 @@
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { PassportStrategy } from '@nestjs/passport';
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { ForbiddenException, Injectable } from '@nestjs/common';
 
 @Injectable()
 export class JwtAdminStrategy extends PassportStrategy(Strategy, 'jwt-admin') {
@@ -14,7 +14,7 @@ export class JwtAdminStrategy extends PassportStrategy(Strategy, 'jwt-admin') {
 
   async validate(payload: { sub: string; isAdmin: boolean }) {
     if (!payload.isAdmin) {
-      throw new UnauthorizedException(
+      throw new ForbiddenException(
         'Você não tem permissão para acessar esse recurso',
       );
     }

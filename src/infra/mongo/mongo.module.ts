@@ -1,10 +1,19 @@
 import { Module, Provider } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserModel, UserModelSchema } from './entities/user.entity';
-import { ProductRepository, UserRepository } from './repositories';
+import {
+  ApiRepository,
+  ProductRepository,
+  UserRepository,
+} from './repositories';
 import { ProductModel, ProductModelSchema } from './entities/product.entity';
+import { ApiModel, ApiModelSchema } from './entities/api.entity';
 
-const providers: Provider[] = [UserRepository, ProductRepository];
+const providers: Provider[] = [
+  UserRepository,
+  ProductRepository,
+  ApiRepository,
+];
 
 @Module({
   imports: [
@@ -12,6 +21,7 @@ const providers: Provider[] = [UserRepository, ProductRepository];
     MongooseModule.forFeature([
       { name: UserModel.name, schema: UserModelSchema },
       { name: ProductModel.name, schema: ProductModelSchema },
+      { name: ApiModel.name, schema: ApiModelSchema },
     ]),
   ],
   providers,

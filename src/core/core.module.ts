@@ -2,6 +2,7 @@ import { Global, Module, Provider } from '@nestjs/common';
 import {
   AuthAppUsecase,
   AuthUsecase,
+  CreateApiUsecase,
   CreateProductUsecase,
   CreateUserUsecase,
   UpdateProductUsecase,
@@ -13,6 +14,7 @@ const providers: Provider[] = [
   UpdateProductUsecase,
   AuthUsecase,
   AuthAppUsecase,
+  CreateApiUsecase,
 ];
 
 @Global()
