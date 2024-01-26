@@ -4,4 +4,5 @@ export type UpdateUserDto = {
   photo?: string;
   isAdmin?: boolean;
   active?: boolean;
+  googleId?: string;
 };
