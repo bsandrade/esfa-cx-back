@@ -25,7 +25,6 @@ export class AuthAppUsecase {
 
     const payload = {
       sub: user.email,
-      isAdmin: user.isAdmin,
       googleId,
     };
     return {

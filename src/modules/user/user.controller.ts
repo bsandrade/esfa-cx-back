@@ -14,6 +14,7 @@ import { UserService } from './user.service';
 import { CreateUserModel } from './models/create-user.model';
 import { UpdateUserModel } from './models/update-user.model';
 import { JwtAdminAuthGuard } from '@shared/guards/jwt-admin/jwt-admin.guard';
+import { JwtAuthGuard } from '@shared/guards/jwt/jwt.guard';
 
 @Controller({
   version: '1',
@@ -28,6 +29,7 @@ export class UserController {
     return await this.userService.create(input);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Get()
   async all() {
     return await this.userService.listAll();
