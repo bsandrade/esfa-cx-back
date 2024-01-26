@@ -2,10 +2,22 @@ import { Module } from '@nestjs/common';
 import { InfraModule } from './infra/infra.module';
 import { CoreModule } from './core/core.module';
 import { AuthModule, ProductModule, UserModule } from './modules';
+import { PassportModule } from '@nestjs/passport';
+import { JwtStrategy } from '@shared/guards/jwt/jwt.strategy';
+import { JwtAuthGuard } from '@shared/guards/jwt/jwt.guard';
+import { JwtAdminAuthGuard } from '@shared/guards/jwt-admin/jwt-admin.guard';
+import { JwtAdminStrategy } from '@shared/guards/jwt-admin/jwt.strategy';
 
 @Module({
-  imports: [InfraModule, CoreModule, UserModule, ProductModule, AuthModule],
+  imports: [
+    InfraModule,
+    PassportModule,
+    CoreModule,
+    UserModule,
+    ProductModule,
+    AuthModule,
+  ],
   controllers: [],
-  providers: [],
+  providers: [JwtAuthGuard, JwtStrategy, JwtAdminAuthGuard, JwtAdminStrategy],
 })
 export class AppModule {}
