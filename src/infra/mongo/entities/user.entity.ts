@@ -15,6 +15,8 @@ export class UserModel {
   isAdmin: boolean;
   @Prop({ default: true })
   active: boolean;
+  @Prop()
+  googleId: string;
 }
 
 export type UserModelDocument = UserModel & Document;

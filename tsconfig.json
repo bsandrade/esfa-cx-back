@@ -14,7 +14,7 @@
     "skipLibCheck": true,
     "paths": {
       "@user/*": [
-        "src/user/*"
+        "src/modules/user/*"
       ],
       "@infra/*": [
         "src/infra/*"

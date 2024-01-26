@@ -6,12 +6,12 @@ import { BadRequestException, Injectable } from '@nestjs/common';
 export class CreateUserUsecase {
   constructor(private readonly _userMongo: UserRepository) {}
 
-  async execute({ email }: CreateUserDto) {
+  async execute({ email, googleId }: CreateUserDto) {
     const userExists = await this._userMongo.getByEmail(email);
     if (userExists) {
       throw new BadRequestException('Usuário existe');
     }
 
-    return await this._userMongo.create({ email });
+    return await this._userMongo.create({ email, googleId });
   }
 }

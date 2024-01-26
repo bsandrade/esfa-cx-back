@@ -8,6 +8,7 @@ export class UserMapper {
       photo: input.photo,
       isAdmin: input.isAdmin,
       active: input.active,
+      googleId: input.googleId,
     };
   }
 }
