@@ -1,8 +1,8 @@
+import { CreateUserUsecase } from '@core/use-cases';
 import { CreateUserDto } from '@infra/mongo/dtos/create-user.dto';
 import { UpdateUserDto } from '@infra/mongo/dtos/update-user.dto';
 import { UserRepository } from '@infra/mongo/repositories';
 import { Injectable } from '@nestjs/common';
-import { CreateUserUsecase } from 'src/core/use-cases/create-user.usecase';
 
 @Injectable()
 export class UserService {

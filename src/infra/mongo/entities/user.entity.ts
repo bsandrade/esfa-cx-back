@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 @Schema({
-  collection: 'cadastros',
+  collection: 'users',
   timestamps: true,
 })
 export class UserModel {

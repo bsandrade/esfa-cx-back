@@ -21,6 +21,9 @@
       ],
       "@shared/*": [
         "src/shared/*"
+      ],
+      "@core/*": [
+        "src/core/*"
       ]
     }
   }

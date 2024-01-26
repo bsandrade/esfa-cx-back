@@ -1,7 +1,15 @@
 import { Global, Module, Provider } from '@nestjs/common';
-import { CreateUserUsecase } from './use-cases/create-user.usecase';
+import {
+  CreateProductUsecase,
+  CreateUserUsecase,
+  UpdateProductUsecase,
+} from './use-cases';
 
-const providers: Provider[] = [CreateUserUsecase];
+const providers: Provider[] = [
+  CreateUserUsecase,
+  CreateProductUsecase,
+  UpdateProductUsecase,
+];
 
 @Global()
 @Module({
