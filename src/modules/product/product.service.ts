@@ -17,7 +17,10 @@ export class ProductService {
   }
 
   async all() {
-    return await this._productMongo.all();
+    const products = await this._productMongo.all();
+    return {
+      products,
+    };
   }
 
   async delete(id: string) {

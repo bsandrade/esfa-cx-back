@@ -12,7 +12,10 @@ export class UserService {
   ) {}
 
   async listAll() {
-    return await this._userMongo.all();
+    const users = await this._userMongo.all();
+    return {
+      users,
+    };
   }
 
   async create(input: CreateUserDto) {
